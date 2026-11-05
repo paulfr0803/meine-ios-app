@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.Taschenrechner.meineapp" version="1.0.0" xmlns="http://w3.org">
+    <!-- Der Name deiner App auf dem iPhone -->
+    <name>Taschenrechner</name>
+    
+    <description>Eine tolle App aus HTML, CSS und JS.</description>
+    <author email="mail.me1@gmx.de">Paul</author>
+    
+    <!-- Die Startdatei -->
+    <content src="index.html" />
+    
+    <!-- Erlaubt der App, Daten aus dem Internet nachzuladen -->
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+</widget>

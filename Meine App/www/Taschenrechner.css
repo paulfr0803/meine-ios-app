@@ -1,0 +1,119 @@
+*{
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+body{
+    display:grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #202124;
+    color: #e8eaed;
+}
+
+#Taschenrechner {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.5rem;
+}
+#Taschenrechner * {
+    color:inherit ;
+}
+#Anzeige {
+    grid-column: span 4;
+    border: 1px solid #3c4043;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    text-align: end;
+    display:flex ;
+    flex-direction: column;
+    gap: 0.5em;
+}
+#eingabefeld {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    text-align: inherit;
+}
+
+#eingabefeld:focus-visible {
+    outline: none;
+}
+
+#Anzeige:focus-within{
+    outline: 1px solid white;
+}
+
+.taste {
+    background-color: #3c4043;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1em 2em;
+    border-radius: 0.25;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.taste:hover {
+    background-color: #424548;
+}
+
+#rechenweg-anzeige {
+    line-height: 1.2;
+    height: 1.2em;
+}
+
+/* Das Design für die Verlaufs-Box */
+#taschenrechner-verlauf {
+    margin: 30px auto;       /* 30px Abstand nach oben, "auto" zentriert die Box */
+    padding: 15px;           /* Innenabstand für den Text */
+    border: 1px solid;
+    background-color: #202124; /* Ein weiches, helves Grau (schickere Box) */
+    border: 1px solid #ddd;  /* Ein feiner Rahmen */
+    border-radius: 8px;      /* Schön abgerundete Ecken */
+    max-width: 340px;        /* Genau so breit wie typische Taschenrechner */
+    max-height: 180px;       /* Verhindert, dass die Box unendlich lang wird */
+    overflow-y: auto;        /* Fügt eine Scrollleiste hinzu, wenn viele Rechnungen drin sind */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Ein ganz zarter Schatten */
+    font-family: Arial, sans-serif;
+}
+
+/* Das Design für jede einzelne Rechnung im Verlauf */
+#taschenrechner-verlauf p {
+    margin: 0;
+    padding: 8px 4px;
+    color: white;             /* Gut lesbare, dunkelgraue Schrift */
+    font-size: 14px;
+    border-bottom: 1px dashed #eee; /* Eine feine gestrichelte Linie zwischen Rechnungen */
+    text-align: right;       /* Rechnungen rechtsbündig anzeigen, wie auf dem Display */
+}
+
+/* Die letzte Rechnung braucht keine Trennlinie unten */
+#taschenrechner-verlauf p:last-child {
+    border-bottom: none;
+}
+
+/* Die neue umschließende Box steuert das Nebeneinander-Layout */
+.seite-layout {
+    display: flex;          /* Aktiviert das Flexbox-Layout */
+    flex-direction: row;    /* Richtet Rechner und Verlauf nebeneinander aus */
+    justify-content: center;/* Zentriert das gesamte Paket auf dem Bildschirm */
+    align-items: flex-start;/* Richtet beide Elemente oben an der gleichen Kante aus */
+    gap: 200px;              /* Der Abstand zwischen Taschenrechner und Verlauf */
+    margin-top: 50px;       /* Abstand zum oberen Bildschirmrand */
+    padding: 0 20px;
+}
+
+/* WICHTIG: Falls du in deinem alten CSS beim Verlauf oder beim 
+   Taschenrechner "margin: ... auto;" stehen hast, überschreiben wir das hier, 
+   damit die Flexbox richtig funktioniert: */
+#Taschenrechner {
+    margin: 0;              /* Entfernt die alte automatische Zentrierung */
+}
+
+#taschenrechner-verlauf {
+    margin: 0;              /* Entfernt den alten Abstand nach oben */
+    width: 100px;           /* Feste Breite für das Verlaufsfenster daneben */
+    height: 380px;          /* Passt die Höhe ungefähr an die deines Rechners an */
+    max-height: 400px;
+}
