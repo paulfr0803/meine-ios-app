@@ -20,14 +20,13 @@ jobs:
     - name: Install Cordova
       run: npm install -g cordova
 
-    - name: Build iOS Platform
+    - name: Prepare iOS Project
       run: |
         cordova platform add ios
-        cordova build ios --emulator
+        cordova prepare ios
         
     - name: Upload App Output
       uses: actions/upload-artifact@v4
       with:
         name: ios-app
-        path: platforms/ios/build/emulator/
-
+        path: platforms/ios/
