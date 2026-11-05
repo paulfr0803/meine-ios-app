@@ -6,11 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14
+    # Hier nutzen wir nun das unterstützte macOS 15
+    runs-on: macos-15
 
     defaults:
       run:
-        # HIER DEN NAMEN DEINES ORDNER EINTRAGEN (z.B. MeineApp)
+        # Ersetze ORDNER durch den exakten Namen deines Ordners auf GitHub!
+        # Falls deine config.xml direkt auf der Startseite liegt, lösche die Zeilen 11 bis 14 einfach komplett.
         working-directory: Meine App
 
     steps:
@@ -34,5 +36,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ios-app
-        path: ${{ github.workspace }}/DEIN_ORDNERNAME/platforms/ios/
+        # Wenn du Zeile 11-14 gelöscht hast, entferne hier das "ORDNER/" am Anfang
+        path: platforms/ios/
+
 
